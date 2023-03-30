@@ -1,4 +1,6 @@
+// Вычислить n! (произведение чисел от 1 до n)
 
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -6,15 +8,14 @@ public class App {
         System.out.print("Введите число: ");
         int num = scan.nextInt();
         scan.close();
-        
-        System.out.printf("Сумма числел от 1 до %d равна %d.", num ,FindNumber(num));
+
+        System.out.printf("Произведениек числел от 1 до %d равно %d.", num, FindFactorial(num));
     }
 
-    public static int FindNumber(int num){
-        int sum = 0;
-        for (int i = 0; i <= num; i++) {
-            sum +=i;
-        }
-        return sum;
+    public static int FindFactorial(int num) {
+        if (num == 1)
+            return 1;
+        else
+            return num * FindFactorial(num - 1);
     }
 }
